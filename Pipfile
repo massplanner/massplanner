@@ -8,6 +8,10 @@ openai = "*"
 rich = "*"
 aiohttp = "*"
 prisma = "*"
+flask = "*"
+requests = "*"
+numpy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

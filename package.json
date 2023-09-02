@@ -4,9 +4,14 @@
   "scripts": {
     "preinstall": "npm install -g bazel",
     "build": "bazel build $(bazel query //...)",
-    "start:recommendations:proxy_server": "bazel run //massplanner/recommendations:proxy_server"
+    "start:recommendations:background-services": "python3 -m prisma generate && concurrently \"pnpm start:recommendations:external_api\"",
+    "start:recommendations:external_api": "bazel run //massplanner/recommendations:external_api"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "prisma": "^5.2.0"
+  }
 }

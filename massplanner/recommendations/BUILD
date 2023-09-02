@@ -7,8 +7,8 @@ py_library(
 )
 
 py_binary(
-  name = "proxy_server",
-  srcs = ["proxy_server.py"],
+  name = "external_api",
+  srcs = ["external_api.py"],
   deps = [
     ":massplanner_recommendations",
   ],

@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-py"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  extensions = [vector]
+  url        = env("DATABASE_URL")
+}
+
+model ActivityItem {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  updatedAt   DateTime @default(now()) @map(name: "updated_at")
+  profileId   String   @map(name: "profile_id")
+  userId      String   @map(name: "user_id")
+
+  @@map(name: "activity_items")
+}
+
+model Occupation {
+  id          String   @id @default(cuid())
+  title       String
+  code        String
+  group       String
+  definition  String
+
+  embedding Unsupported("vector(1536)")?
+
+  @@map("occupation")
+}
+
+model Resume {
+  id           String   @id @default(cuid())
+
+  skills       String
+  occuppations String
+
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
+  embedding    Unsupported("vector(1536)")?
+
+  @@map(name: "resumes")
+}

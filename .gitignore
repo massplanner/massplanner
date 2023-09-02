@@ -33,3 +33,6 @@ eclipse-*bin/
 .bazelversion
 # User-specific .bazelrc
 user.bazelrc
+.env
+
+node_modules
