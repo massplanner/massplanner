@@ -1,0 +1,12 @@
+{
+  "name": "massplanner",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "npm install -g bazel",
+    "build": "bazel build $(bazel query //...)",
+    "start:recommendations:proxy_server": "bazel run //massplanner/recommendations:proxy_server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
