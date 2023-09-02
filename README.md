@@ -1,8 +1,8 @@
 massplanner
 
 ### Develpment Setup
-- Clone the repository: `git clone https://github.com/massplanner/massplanner_ai.git`
-- Navigate to the project directory: `cd massplanner_ai`
+- Clone the repository: `git clone https://github.com/massplanner/massplanner.git`
+- Navigate to the project directory: `cd massplanner`
 - Activate the virtual environment: `pipenv shell`
 - Install the Python dependencies: `pipenv install`
 - Build the project: `pnpm run build`
