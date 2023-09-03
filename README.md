@@ -1,8 +1,15 @@
 massplanner
 
-- 🌱 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
-- 🚀 **Speed & Efficiency**: The seeder is in a working state and set to adapt to dynamic, cross-platform requirements.
-- 📊 **Real-time Analytics**: Data sourced from publicly available datasets, like the [BLS](https://www.bls.gov/).
+- 🎓 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
+  - 💡 **Barrier-Free Entry**: We've removed the traditional stumbling blocks—UX complexity and initial financial investments—to make blockchain technology more accessible.
+  - 💎 **Pay with Learning or Engagement**: Here, value is not just monetary. Contribute by learning or by actively participating in the platform. 
+    - 👤 **Minimum Requirement**: Simply upload your resume to start earning network tokens.
+    - 🛠 **Advanced Engagement**: Utilize our function-calling feature (enabled by OpenAI technology) to perform tasks based on zero-shot data. This action requires staking tokens, which you can earn initially by uploading your resume.
+
+- 🚀 **Speed & Efficiency**: The seeder is in prime condition and architected for dynamic adaptability across platforms.
+  
+- 📊 **Real-time Analytics**: All our data is sourced from trusted, public databases like the [BLS](https://www.bls.gov/), ensuring that you're always in the loop with real-time, accurate information.
+
 
 ## Features
 
