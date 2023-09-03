@@ -1,21 +1,48 @@
-massplanner (this is raw, requires some inferred setup)
+massplanner
 
-Build massplanner.
-```
+- 🌱 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
+- 🚀 **Speed & Efficiency**: The seeder is in a working state and set to adapt to dynamic, cross-platform requirements.
+- 📊 **Real-time Analytics**: Data sourced from publicly available datasets, like the [BLS](https://www.bls.gov/).
+
+## Features
+
+- Resume Analysis
+- Interview Preparation Tips
+- Suggestions for Resume Improvements
+- Generated Skills and Occupations
+- Learning Resources Links
+
+## Installation
+
+### Build MassPlanner
+
+First, clone the repository and navigate into the project directory. Then, execute the following command to build MassPlanner:
+
+```bash
 pnpm build
 ```
 
-Start the recommendation engine via api. 
+### Start the API
+
+Start using the following command:
+
 ```bash
 python massplanner/external_gateway_api.py
 ```
 
-Just upload a resume 
+## Usage
+
+### Uploading a Resume
+
+To upload a resume and get recommendations, execute the following `curl` command:
 
 ```bash
 curl --location 'http://localhost:8000/api/document/upload' \
 --form 'document=@"/x/chrisbradley/jack-sparrow-resume.pdf"'
 ```
+
+You will receive a JSON response containing the analysis, suggestions, and links to resources to enhance your job search.
+
 
 ```json
 {
