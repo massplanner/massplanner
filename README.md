@@ -1,4 +1,4 @@
-massplanner
+massplanner (this is raw, requires some inferred setup)
 
 Build massplanner.
 ```
@@ -10,7 +10,7 @@ Start the recommendation engine via api.
 python massplanner/external_gateway_api.py
 ```
 
-Just upload a resume (this is raw, requires some inferred setup)
+Just upload a resume 
 
 ```bash
 curl --location 'http://localhost:8000/api/document/upload' \
