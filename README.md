@@ -1,8 +1,5 @@
 massplanner
 
-
-upload any generic resume in form-data key='document' /api/document/upload
-
 ```json
 {
     "result": {
