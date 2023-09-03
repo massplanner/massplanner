@@ -32,6 +32,16 @@ async def get_text_embedding(request):
     response        = await recommendations.get_text_embedding(document['text'])
 
     return web.json_response({ "result": response }, headers=headers)
+
+
+async def get_resume_occupation_recommendations(request):
+    headers = { "content_type": "application/json" }
+
+    recommendations = RecommendationsEngine()
+    document        = await request.json()
+    response        = await recommendations.get_resume_occupation_recommendations(document['resume_id'])
+
+    return web.json_response({ "result": response }, headers=headers)
   
 
 @set_files
@@ -46,15 +56,18 @@ async def upload_resume(request):
 
         if not extracted_labels['success']:
             return web.json_response({ "result": extracted_labels['result'] }, headers=headers)
+        
+        skills      = extracted_labels['result']['potential_related_skills']
+        occupations = extracted_labels['result']['potential_related_occupations']
 
         resume_embedding      = await recommendations.get_text_embedding(resume_text)
-        skills_embedding      = await recommendations.get_text_embedding(",".join(extracted_labels['result']['potential_related_skills']))
-        occupations_embedding = await recommendations.get_text_embedding(",".join(extracted_labels['result']['potential_related_occupations']))
+        skills_embedding      = await recommendations.get_text_embedding(",".join(skills))
+        occupations_embedding = await recommendations.get_text_embedding(",".join(occupations))
 
         resume_id = await recommendations.create_resume(
             resume_text, 
-            extracted_labels['result']['potential_related_skills'], 
-            extracted_labels['result']['potential_related_occupations'], 
+            skills, 
+            occupations, 
             resume_embedding, 
             skills_embedding, 
             occupations_embedding
@@ -69,6 +82,7 @@ async def upload_resume(request):
 app = web.Application()
 app.add_routes([
     web.post("/api/recommendations/upload-resume", upload_resume),
+    web.get("/api/recommendations/resume-occupations", get_resume_occupation_recommendations),
     web.post("/api/recommendations/document-full-text", get_document_full_text),
     web.post("/api/recommendations/text-embedding", get_text_embedding),
 ])

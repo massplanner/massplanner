@@ -34,15 +34,18 @@ model Occupation {
 }
 
 model Resume {
-  id           String   @id @default(cuid())
-
-  skills       String
-  occuppations String
+  id                    String   @id @default(cuid())
+  
+  text                  String
+  skills                String
+  occupations           String
+  
+  text_embedding        Unsupported("vector(1536)")?
+  skills_embedding      Unsupported("vector(1536)")?
+  occupations_embedding Unsupported("vector(1536)")?
 
   createdAt    DateTime @default(now()) @map(name: "created_at")
   updatedAt    DateTime @default(now()) @map(name: "updated_at")
-
-  embedding    Unsupported("vector(1536)")?
 
   @@map(name: "resumes")
 }

@@ -20,8 +20,6 @@ class RecommendationsEngine:
     logger.info("Starting RecommendationsEngine...")
 
   async def get_document_full_text(self, document):
-    logger.info("Getting document full text")
-
     data = {'file': document.file.read() }
     headers = {
       'Authorization': 'Basic ' + encode(NANONETS_API_KEY),
@@ -88,18 +86,40 @@ class RecommendationsEngine:
     await prisma.connect()
 
     result = await prisma.resume.create(data={
-      "occuppations": '[{0}]'.format(occupations),
-      "skills": '[{0}]'.format(skills),
+      "text": text,
+      "occupations": str(occupations),
+      "skills": str(skills)
     })
 
     await prisma.query_raw("""
     UPDATE resumes
     SET
-            embedding = '{0}'::vector
+      text_embedding = '{0}'::vector,
+      skills_embedding = '{1}'::vector,
+      occupations_embedding = '{2}'::vector            
     WHERE
-            id = '{1}';
-    """.format(text_embedding, result.id))
+      id = '{3}';
+    """.format(text_embedding, skills_embedding, occupations_embedding, result.id))
 
     await prisma.disconnect()
     return result.id
-    
+  
+  async def get_resume_occupation_recommendations(self, resume_id):
+    await prisma.connect()
+
+    resume = await prisma.resume.find_unique(where={
+      "id": resume_id
+    })
+
+    embeddings = await prisma.query_raw("""
+    SELECT
+      CAST(text_embedding AS TEXT) as text_embedding,
+      CAST(skills_embedding AS TEXT) as skills_embedding,
+      CAST(occupations_embedding AS TEXT) as occupations_embedding,
+    FROM resumes
+    WHERE
+      id = '{0}';
+    """.format(resume.id))
+
+    await prisma.disconnect()
+    return
