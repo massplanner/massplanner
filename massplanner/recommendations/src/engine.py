@@ -1,4 +1,7 @@
 from .lib import encode, GptFunction, GptFunctionParameter, GptFunctionParameterProperty
+from .db import prisma
+from dotenv import load_dotenv
+load_dotenv()
 
 import os
 import json
@@ -21,13 +24,13 @@ class RecommendationsEngine:
 
     data = {'file': document.file.read() }
     headers = {
-        'Authorization': 'Basic ' + encode(NANONETS_API_KEY),
+      'Authorization': 'Basic ' + encode(NANONETS_API_KEY),
     }
     config = {
-        'method': 'post',
-        'url': 'https://app.nanonets.com/api/v2/OCR/FullText',
-        'headers': headers,
-        'files': data
+      'method': 'post',
+      'url': 'https://app.nanonets.com/api/v2/OCR/FullText',
+      'headers': headers,
+      'files': data
     }
     response = requests.post(config['url'], headers=config['headers'], files=config['files'])
     return response.json()['results'][0]['page_data'][0]['raw_text']
@@ -80,4 +83,23 @@ class RecommendationsEngine:
             "success": False,
             "result": chat_response_message
         }
+    
+  async def create_resume(self, text, skills, occupations, text_embedding, skills_embedding, occupations_embedding):
+    await prisma.connect()
+
+    result = await prisma.resume.create(data={
+      "occuppations": '[{0}]'.format(occupations),
+      "skills": '[{0}]'.format(skills),
+    })
+
+    await prisma.query_raw("""
+    UPDATE resumes
+    SET
+            embedding = '{0}'::vector
+    WHERE
+            id = '{1}';
+    """.format(text_embedding, result.id))
+
+    await prisma.disconnect()
+    return result.id
     

@@ -36,7 +36,6 @@ async def get_text_embedding(request):
 
 @set_files
 async def upload_resume(request):
-    response = "Something went wrong"
     headers = { "content_type": "application/json" }
 
     try:
@@ -52,9 +51,18 @@ async def upload_resume(request):
         skills_embedding      = await recommendations.get_text_embedding(",".join(extracted_labels['result']['potential_related_skills']))
         occupations_embedding = await recommendations.get_text_embedding(",".join(extracted_labels['result']['potential_related_occupations']))
 
-        return web.json_response({ "result": resume_text }, headers=headers)
+        resume_id = await recommendations.create_resume(
+            resume_text, 
+            extracted_labels['result']['potential_related_skills'], 
+            extracted_labels['result']['potential_related_occupations'], 
+            resume_embedding, 
+            skills_embedding, 
+            occupations_embedding
+        )
+        
+        return web.json_response({ "result": resume_id }, headers=headers)
     except Exception as e:
-        return web.json_response({ "result": response }, headers=headers)
+        return web.json_response({ "result": str(e) }, headers=headers)
 
 
 

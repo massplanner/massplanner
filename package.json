@@ -5,7 +5,7 @@
     "preinstall": "npm install -g bazel",
     "build": "bazel build $(bazel query //...)",
     "start:recommendations:background-services": "python3 -m prisma generate && concurrently \"pnpm start:recommendations:external_api\"",
-    "start:recommendations:external_api": "bazel run //massplanner/recommendations:external_api"
+    "start:recommendations:external_api": "bazel run //massplanner/recommendations:external_api --action_env=OPENAI_API_KEY=${OPENAI_API_KEY} --action_env=NANONETS_API_KEY=${NANONETS_API_KEY} --action_env=DATABASE_URL=${DATABASE_URL}"
   },
   "keywords": [],
   "author": "",
