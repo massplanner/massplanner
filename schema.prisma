@@ -39,6 +39,7 @@ model Resume {
   text                  String
   skills                String
   occupations           String
+  yt_links              String
   
   text_embedding        Unsupported("vector(1536)")?
   skills_embedding      Unsupported("vector(1536)")?

@@ -1,6 +1,10 @@
 from aiohttp.web_request import FileField
 
 import base64
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 def encode(message):
@@ -34,6 +38,7 @@ class GptFunctionParameterProperty:
         self.example = example
 
     def get_serialized(self):
+        logger.info("GptFunctionParameterProperty::get_serialized")
         return {
             self.name: {
                 "type": self.type,
@@ -50,6 +55,7 @@ class GptFunctionParameter:
         self.properties = {}
 
     def add_property(self, property: GptFunctionParameterProperty):
+        logger.info("GptFunctionParameter::add_property")
         prop = property.get_serialized()
         self.properties[property.name] = prop[property.name]
 
@@ -62,6 +68,7 @@ class GptFunction:
         self.parameter = parameter
         
     def get_serialized(self):
+        logger.info("GptFunction::get_serialized")
         return {
             "name": self.name,
             "description": self.description,

@@ -1,64 +1,54 @@
-# MassPlanner Development & Module Documentation
+massplanner
 
-## Table of Contents
-1. [Development Setup](#development-setup)
-2. [Recommendations Module](#recommendations-module)
 
----
+upload any generic resume in form-data key='document' /api/document/upload
 
-## Development Setup
-
-### Prerequisites
-- Git
-- Python 3.x
-- Pipenv
-- PNPM
-
-### Steps
-
-1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/massplanner/massplanner.git
-    ```
-
-2. **Navigate to Project Directory**
-    ```bash
-    cd massplanner
-    ```
-
-3. **Activate Virtual Environment**
-    ```bash
-    pipenv shell
-    ```
-
-4. **Install Python Dependencies**
-    ```bash
-    pipenv install
-    ```
-
-5. **Build the Project**
-    ```bash
-    pnpm build
-    ```
-
----
-
-## Recommendations Module
-
-### Overview
-
-The Recommendations Module uses Generative AI to provide insights on resumes. It extracts skills, titles, etc., and matches them against a pre-defined set of standardized occupations stored in a vector database. The system uses cosine similarity to compare these features in real-time and offers three different categories of recommendations based on skills, occupation titles, and raw resume text.
-
-### Features
-
-- `recommendations_by_generative_skills`: Suggestions based on skills.
-- `recommendations_by_generative_occupation_titles`: Suggestions based on occupation titles.
-- `recommendations_by_raw_resume_text`: Suggestions based on the raw text of the resume.
-
-### Running Background Servers
-
-Run the background services needed for the Recommendations module:
-
-```bash
-pnpm pnpm start:recommendations:background-services
+```json
+{
+    "result": {
+        "resume_id": "clm3vjhv50000qq5fznh3br9u",
+        "interview_preperation": "1. Research the company and its mission.\n2. Review common interview questions.\n3. Prepare your own questions to ask the interviewer.\n4. Practice your answers and skills.\n5. Dress professionally and arrive early.\n6. Relax and be confident during the interview.",
+        "suggested_improvements": [
+            "Provide more specific details about accomplishments and responsibilities.",
+            "Include education dates and institution names.",
+            "Highlight specific programming languages and technologies used."
+        ],
+        "generated": {
+            "skills": [
+                "Captain",
+                "Black Pearl",
+                "East Indies",
+                "Tortuga",
+                "Programming",
+                "html",
+                "css",
+                "python",
+                "javascript",
+                "R",
+                "Android",
+                "Linux",
+                "Bucaneering",
+                "Pirate",
+                "Certified",
+                "English",
+                "French",
+                "Spanish",
+                "Italian"
+            ],
+            "occupations": [
+                "Captain",
+                "Pirate",
+                "Programmer",
+                "Web Developer"
+            ],
+            "links": {
+                "youtube": [
+                    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    "https://www.youtube.com/watch?v=9bZkp7q19f0",
+                    "https://www.youtube.com/watch?v=kXYiU_JCYtU"
+                ]
+            }
+        }
+    }
+}
 ```
