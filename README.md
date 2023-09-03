@@ -1,5 +1,22 @@
 massplanner
 
+Build massplanner.
+```
+pnpm build
+```
+
+Start the recommendation engine via api. 
+```bash
+python massplanner/external_gateway_api.py
+```
+
+Just upload a resume (this is raw, requires some inferred setup)
+
+```bash
+curl --location 'http://localhost:8000/api/document/upload' \
+--form 'document=@"/x/chrisbradley/jack-sparrow-resume.pdf"'
+```
+
 ```json
 {
     "result": {
