@@ -7,6 +7,7 @@ tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](ht
   - 💎 **Pay with Learning or Engagement**: Here, value is not just monetary. Contribute by learning or by actively participating in the platform. 
     - 👤 **Minimum Requirement**: Simply upload your resume to start earning network tokens.
     - 🛠 **Advanced Engagement**: Utilize our function-calling feature (enabled by OpenAI technology) to perform tasks based on zero-shot data. This action requires staking tokens, which you can earn initially by uploading your resume.
+<img width="203" alt="Screenshot 2023-09-03 at 6 46 11 PM" src="https://github.com/massplanner/massplanner/assets/17681450/7a9879c8-efde-495b-84e9-fdfe4fcc445c">
 
 - 🚀 **Speed & Efficiency**: The seeder is in prime condition and architected for dynamic adaptability across platforms.
   
