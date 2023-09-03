@@ -1,6 +1,6 @@
-massplanner
+massplanner ai
 
-tl;dr im repurposing an old industry tool that got banned for public good
+tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got banned for public good
 
 - 🎓 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
   - 💡 **Barrier-Free Entry**: We've removed the traditional stumbling blocks—UX complexity and initial financial investments—to make blockchain technology more accessible.
