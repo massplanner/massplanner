@@ -1,5 +1,7 @@
 massplanner
 
+tl;dr im repurposing an old industry tool that got banned for public good
+
 - 🎓 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
   - 💡 **Barrier-Free Entry**: We've removed the traditional stumbling blocks—UX complexity and initial financial investments—to make blockchain technology more accessible.
   - 💎 **Pay with Learning or Engagement**: Here, value is not just monetary. Contribute by learning or by actively participating in the platform. 
@@ -9,6 +11,7 @@ massplanner
 - 🚀 **Speed & Efficiency**: The seeder is in prime condition and architected for dynamic adaptability across platforms.
   
 - 📊 **Real-time Analytics**: All our data is sourced from trusted, public databases like the [BLS](https://www.bls.gov/), ensuring that you're always in the loop with real-time, accurate information.
+
 
 
 ## Features
