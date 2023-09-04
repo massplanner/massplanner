@@ -4,8 +4,24 @@ Working on some cool stuff for EthParis and EthNewYork, but let's talk about wha
 
 We're bringing back a tool called [Mass Planner](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that used to be super popular, but we're making it even better! Our new tool is like a super-smart robot that's always looking for new and exciting things for you to learn and explore.
 
-Auto Apply (Offline Aspect)
-<img width="1546" alt="Screenshot 2023-09-04 at 5 24 08 PM" src="https://github.com/massplanner/massplanner/assets/17681450/e580f5da-81e6-4acf-bc08-513a154b4bc2">
+
+<div>
+    <a href="https://www.loom.com/share/dd6835f31a98447fbe0a4dd81f3ab9c6">
+      <p>Iteration 1</p>
+    </a>
+    <a href="https://www.loom.com/share/dd6835f31a98447fbe0a4dd81f3ab9c6">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/dd6835f31a98447fbe0a4dd81f3ab9c6-with-play.gif">
+    </a>
+  </div>
+<div>
+    <a href="https://www.loom.com/share/599b2f15c75e447a9ae5a616ae0a6a4b">
+      <p>Iteration 2</p>
+    </a>
+    <a href="https://www.loom.com/share/599b2f15c75e447a9ae5a616ae0a6a4b">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/599b2f15c75e447a9ae5a616ae0a6a4b-with-play.gif">
+    </a>
+  </div>
+Iteration:3 Auto Apply (Offline Aspect) <img width="1546" alt="Screenshot 2023-09-04 at 5 24 08 PM" src="https://github.com/massplanner/massplanner/assets/17681450/e580f5da-81e6-4acf-bc08-513a154b4bc2">
 
 
 Here's what our tool can do:
