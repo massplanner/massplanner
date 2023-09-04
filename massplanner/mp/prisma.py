@@ -1,13 +1,9 @@
 from prisma import Prisma
-import logging
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 prisma = Prisma()
 
 async def create_resume(text, skills, occupations, text_embedding, skills_embedding, occupations_embedding, yt_links):
-    logger.info("create_resume")
     await prisma.connect()
 
     result = await prisma.resume.create(data={
@@ -32,7 +28,6 @@ async def create_resume(text, skills, occupations, text_embedding, skills_embedd
 
 
 async def get_resume_embeddings(resume_id):
-    logger.info("get_resume_embeddings")
     await prisma.connect()
 
     resume = await prisma.resume.find_unique(where={
@@ -51,3 +46,22 @@ async def get_resume_embeddings(resume_id):
 
     await prisma.disconnect()
     return embeddings
+
+
+async def get_resume_text(resume_id):
+    await prisma.connect()
+
+    resume = await prisma.resume.find_unique(where={
+        "id": resume_id
+    })
+
+    response = await prisma.query_raw("""
+    SELECT
+        text
+    FROM resumes
+    WHERE
+        id = '{0}';
+    """.format(resume.id))
+
+    await prisma.disconnect()
+    return response[0]["text"]
