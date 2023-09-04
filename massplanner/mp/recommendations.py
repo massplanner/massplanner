@@ -1,6 +1,6 @@
 from .utils import encode
-from .prisma import get_resume_embeddings, create_resume
-from .openai import openai, GptFunction, GptFunctionParameter, GptFunctionParameterProperty
+from .prisma import get_resume_embeddings, create_resume, get_resume_text
+from .openai import openai, GptFunction, GptFunctionParameter, GptFunctionParameterProperty, get_features_from_document
 
 import json
 import requests
@@ -134,3 +134,7 @@ class RecommendationsEngine:
 
     async def get_occupation_recommendations(self):
         return await get_resume_embeddings(self.resume_id)
+    
+    async def get_features_from_resume(self, resume_id, features):
+        resume_text = await get_resume_text(resume_id)
+        return await get_features_from_document(resume_text, features)

@@ -19,6 +19,20 @@ logger = logging.getLogger(__name__)
 
 NANONETS_API_KEY = os.getenv('NANONETS_API_KEY')
 
+async def get_features(request):
+    headers = { "content_type": "application/json" }
+
+    try:
+        recommendations  = RecommendationsEngine(nanonets_api_key=NANONETS_API_KEY)
+        document         = await request.json()
+        features         = await recommendations.get_features_from_resume(document.get('id'), document.get('features'))
+
+        return web.json_response({ "result": features }, headers=headers)
+    except Exception as e:        
+        logger.error(f"An error occurred while processing the resume: {str(e)}")
+        return web.json_response({"error": "An error occurred while processing the resume. Please try again later."}, headers=headers, status=500)
+
+
 @set_files
 async def get_recommendations(request):
     headers = { "content_type": "application/json" }
@@ -76,6 +90,7 @@ async def get_recommendations(request):
 app = web.Application()
 
 app.add_routes([
+    web.post("/api/features", get_features),
     web.post("/api/recommendations", get_recommendations),
 ])
 

@@ -1,5 +1,6 @@
 [
     {
+        
         "name": "personal_details",
         "type": "object",
         "description": "Personal details of the user including name, contact, and address.",
