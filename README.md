@@ -3,7 +3,7 @@ MassPlanner
 EthParis https://ethglobal.com/showcase/parity-b6mkg  
 EthNewYork currently doing discovery on directions this could go
 
-tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got banned for public good. The new tool purpose is to continously search for new content for consumers but needs to be feed lol.
+tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got shutdown
 
 
 Next Auto Apply (Offline Aspect)
