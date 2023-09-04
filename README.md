@@ -6,6 +6,11 @@ EthNewYork currently doing discovery on directions this could go
 tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got banned for public good. The new tool purpose is to continously search for new content for consumers but needs to be feed lol.
 
 
+Next Auto Apply (Offline Aspect)
+<img width="1546" alt="Screenshot 2023-09-04 at 5 24 08 PM" src="https://github.com/massplanner/massplanner/assets/17681450/e580f5da-81e6-4acf-bc08-513a154b4bc2">
+
+
+
 Resume Feature Extraction and Resume Recommendations. 
 =======
 
