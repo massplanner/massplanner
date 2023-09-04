@@ -48,7 +48,7 @@ pnpm start:api
 To upload a resume and get recommendations, execute the following `curl` command:
 
 ```bash
-curl --location 'http://localhost:8000/api/recommendations' \
+curl --location 'http://localhost:3000/api/recommendations' \
 --form 'document=@"/jack-sparrow-resume.pdf"'
 ```
 

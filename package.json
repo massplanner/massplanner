@@ -2,15 +2,13 @@
   "name": "massplanner",
   "version": "1.0.0",
   "scripts": {
-    "preinstall": "npm install -g bazel",
     "build": "bazel build $(bazel query //...)",
-    "start:api": "python3.9 massplanner/api.py"
+    "start:api": "python3.9 massplanner/api.py 3000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.1",
-    "prisma": "^5.2.0"
+    "concurrently": "^8.2.1"
   }
 }

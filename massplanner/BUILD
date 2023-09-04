@@ -14,7 +14,6 @@ py_binary(
   ],
 )
 
-
 py_binary(
   name = "executable",
   srcs = ["executable.py"],
