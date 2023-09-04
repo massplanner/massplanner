@@ -1,7 +1,59 @@
-massplanner
+massplanner ai
+
+tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got banned for public good. The new tool purpose is to continously search for new content for consumers but needs to be feed lol.
+
+- 🎓 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
+  - 💡 **Barrier-Free Entry**: We've removed the traditional stumbling blocks—UX complexity and initial financial investments—to make blockchain technology more accessible.
+  - 💎 **Pay with Learning or Engagement**: Here, value is not just monetary. Contribute by learning or by actively participating in the platform. 
+    - 👤 **Minimum Requirement**: Simply upload your resume to start earning network tokens.
+    - 🛠 **Advanced Engagement**: Utilize our function-calling feature (enabled by OpenAI technology) to perform tasks based on zero-shot data. This action requires staking tokens, which you can earn initially by uploading your resume.
+<img width="138" alt="Screenshot 2023-09-03 at 6 48 00 PM" src="https://github.com/massplanner/massplanner/assets/17681450/0e28c033-7402-48e2-b3c7-702047f30451">
+
+- 🚀 **Speed & Efficiency**: The seeder is in prime condition and architected for dynamic adaptability across platforms.
+  
+- 📊 **Real-time Analytics**: All our data is sourced from trusted, public databases like the [BLS](https://www.bls.gov/), ensuring that you're always in the loop with real-time, accurate information.
 
 
-upload any generic resume in form-data key='document' /api/document/upload
+
+## Features
+
+- Resume Analysis
+- Interview Preparation Tips
+- Suggestions for Resume Improvements
+- Generated Skills and Occupations
+- Learning Resources Links
+
+## Installation
+
+### Build MassPlanner
+
+First, clone the repository and navigate into the project directory. Then, execute the following command to build MassPlanner:
+
+```bash
+pnpm build
+```
+
+### Start the API
+
+Start using the following command:
+
+```bash
+python massplanner/external_gateway_api.py
+```
+
+## Usage
+
+### Uploading a Resume
+
+To upload a resume and get recommendations, execute the following `curl` command:
+
+```bash
+curl --location 'http://localhost:8000/api/document/upload' \
+--form 'document=@"/x/chrisbradley/jack-sparrow-resume.pdf"'
+```
+
+You will receive a JSON response containing the analysis, suggestions, and links to resources to enhance your job search.
+
 
 ```json
 {

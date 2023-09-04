@@ -81,7 +81,6 @@ class RecommendationsEngine:
         example="['Too much custimization', 'Improve format', 'Include more personal projects']"
     ))
     
-
     function = GptFunction(
         name="build_gerative_profile_from_resume",
         description="extracts the required information from the resume text",
