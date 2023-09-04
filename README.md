@@ -1,5 +1,7 @@
 massplanner ai
 
+EthParis https://ethglobal.com/showcase/parity-b6mkg  
+
 tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got banned for public good. The new tool purpose is to continously search for new content for consumers but needs to be feed lol.
 
 - 🎓 **Learn to Earn Mechanics**: Powered by the [Chia Network](https://www.chia.net/).
