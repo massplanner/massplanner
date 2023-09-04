@@ -35,6 +35,7 @@ Don't worry if this sounds complicated. We've designed our tool to be super easy
 2. POST /api/recommendations: This endpoint accepts a resume document and returns a set of recommendations, including potential related skills, occupations, YouTube links, interview preparation tips, and suggested improvements.
 
 ## Examples
+<img width="1091" alt="Screenshot 2023-09-04 at 7 24 05 PM" src="https://github.com/massplanner/massplanner/assets/17681450/c3569c4a-cda8-4cbf-8940-5ab7f7fd0941">
 
 ```json
 {
