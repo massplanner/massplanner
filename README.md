@@ -28,14 +28,20 @@ To use our tool, you need to send information to two places (we call these "endp
 
 Don't worry if this sounds complicated. We've designed our tool to be super easy to use. And remember, our robot is here to help you learn and grow!
 
-## API Endpoints
-
-1. POST /api/features: This endpoint accepts a JSON object with an 'id' and 'features' of a resume. It returns the extracted features from the resume.
-
-2. POST /api/recommendations: This endpoint accepts a resume document and returns a set of recommendations, including potential related skills, occupations, YouTube links, interview preparation tips, and suggested improvements.
 
 ## Examples
+Given a document text file with assumed contents being resume information.
 <img width="1091" alt="Screenshot 2023-09-04 at 7 24 05 PM" src="https://github.com/massplanner/massplanner/assets/17681450/c3569c4a-cda8-4cbf-8940-5ab7f7fd0941">
+We can use openai function calls to pull out useful information from this resume. Here's an example:
+```json
+ {
+        "name": "skills_and_certifications",
+        "type": "array",
+        "description": "List of skills, languages, tools, and certifications possessed by the user.",
+        "example": ["Python", "Machine Learning", "Certified Scrum Master"]
+}
+```
+Also, not everyone knows how to make a great resume. Sometimes, information might be missing. If someone uploads a not-so-great resume, another person can help by giving a better function to pull out better details from the same resume.
 
 ```json
 {
@@ -87,7 +93,7 @@ Don't worry if this sounds complicated. We've designed our tool to be super easy
 }
 ```
 
-ZeroShot Configs
+Functions/Features
 ```json
 [
     {
