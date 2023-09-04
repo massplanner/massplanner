@@ -4,9 +4,8 @@
   "scripts": {
     "preinstall": "npm install -g bazel",
     "build": "bazel build $(bazel query //...)",
-    "start:external_gateway_api": "bazel run //massplanner:external_gateway_api --action_env=OPENAI_API_KEY=${OPENAI_API_KEY} --action_env=NANONETS_API_KEY=${NANONETS_API_KEY} --action_env=DATABASE_URL=${DATABASE_URL}"
+    "start:api": "python3.9 massplanner/api.py"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",

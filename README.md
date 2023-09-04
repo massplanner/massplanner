@@ -38,7 +38,7 @@ pnpm build
 Start using the following command:
 
 ```bash
-python massplanner/external_gateway_api.py
+pnpm start:api
 ```
 
 ## Usage
@@ -48,8 +48,8 @@ python massplanner/external_gateway_api.py
 To upload a resume and get recommendations, execute the following `curl` command:
 
 ```bash
-curl --location 'http://localhost:8000/api/document/upload' \
---form 'document=@"/x/chrisbradley/jack-sparrow-resume.pdf"'
+curl --location 'http://localhost:8000/api/recommendations' \
+--form 'document=@"/jack-sparrow-resume.pdf"'
 ```
 
 You will receive a JSON response containing the analysis, suggestions, and links to resources to enhance your job search.

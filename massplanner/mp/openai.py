@@ -1,33 +1,7 @@
-from aiohttp.web_request import FileField
+import openai
+import os 
 
-import base64
-import logging
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-
-def encode(message):
-    return base64.b64encode(message.encode('ascii')).decode('ascii')
-
-
-def set_files(function):
-    async def wrapper(*args):
-        try:
-            request = args[1]  # class based handler
-        except IndexError:
-            request = args[0]  # function based handler
-
-        files = {}
-        form_data = await request.post()
-        for field_name, field_value in form_data.items():
-            if isinstance(field_value, FileField):
-                files[field_name] = field_value
-        request.files = files
-        return await function(*args)
-
-    return wrapper
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class GptFunctionParameterProperty:
 
@@ -38,7 +12,6 @@ class GptFunctionParameterProperty:
         self.example = example
 
     def get_serialized(self):
-        logger.info("GptFunctionParameterProperty::get_serialized")
         return {
             self.name: {
                 "type": self.type,
@@ -55,7 +28,6 @@ class GptFunctionParameter:
         self.properties = {}
 
     def add_property(self, property: GptFunctionParameterProperty):
-        logger.info("GptFunctionParameter::add_property")
         prop = property.get_serialized()
         self.properties[property.name] = prop[property.name]
 
@@ -68,7 +40,6 @@ class GptFunction:
         self.parameter = parameter
         
     def get_serialized(self):
-        logger.info("GptFunction::get_serialized")
         return {
             "name": self.name,
             "description": self.description,
@@ -77,6 +48,3 @@ class GptFunction:
                 "properties": self.parameter.properties
             }
         }
-
-
-

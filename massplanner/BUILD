@@ -2,21 +2,22 @@ load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 
 py_library(
   name = "massplanner",
-  srcs = glob(["lib/**/*.py", "recommendations/**/*.py"]),
+  srcs = glob(["mp/**/*.py"]),
   visibility = ["//visibility:public"],
 )
 
 py_binary(
-  name = "external_gateway_api",
-  srcs = ["external_gateway_api.py"],
+  name = "api",
+  srcs = ["api.py"],
   deps = [
     ":massplanner",
   ],
 )
 
+
 py_binary(
-  name = "external_data_builder",
-  srcs = ["external_data_builder.py"],
+  name = "executable",
+  srcs = ["executable.py"],
   deps = [
     ":massplanner",
   ],
