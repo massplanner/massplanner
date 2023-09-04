@@ -1,38 +1,32 @@
-MassPlanner
+Welcome to MassPlanner!
 
-EthParis https://ethglobal.com/showcase/parity-b6mkg  
-EthNewYork currently doing discovery on directions this could go
+Working on some cool stuff for EthParis and EthNewYork, but let's talk about what we have right now.
 
-tl;dr im repurposing an old industry tool called [Mass Planner](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got shutdown
+We're bringing back a tool called [Mass Planner](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that used to be super popular, but we're making it even better! Our new tool is like a super-smart robot that's always looking for new and exciting things for you to learn and explore.
 
-
-Next Auto Apply (Offline Aspect)
+Auto Apply (Offline Aspect)
 <img width="1546" alt="Screenshot 2023-09-04 at 5 24 08 PM" src="https://github.com/massplanner/massplanner/assets/17681450/e580f5da-81e6-4acf-bc08-513a154b4bc2">
 
 
+Here's what our tool can do:
 
-Resume Feature Extraction and Resume Recommendations. 
-=======
+1. **Resume Feature Extraction**: Imagine you could have a robot read your resume and understand all the important stuff like your skills, your experience, and your education. That's exactly what this does! It uses something called machine learning (which is just a fancy way of saying it can learn from experience) to understand your resume.
 
-The Resume Feature Extraction functionality uses advanced machine learning techniques to extract key features such as skills, experience, education, and more from a resume. The extracted features are then used by the Resume Recommendations functionality to generate potential related skills and occupations, provide recommended YouTube links for learning, offer interview preparation tips, and suggest improvements for the resume.
+2. **Resume Recommendations**: Once our robot understands your resume, it can suggest related skills you might want to learn, jobs you might be good at, and even YouTube videos to help you learn more. It's like having your own personal career advisor!
 
-The API provides two endpoints: 
-- POST /api/features: This endpoint accepts a JSON object with an 'id' and 'features' of a resume and returns the extracted features.
-- POST /api/recommendations: This endpoint accepts a resume document and returns a set of recommendations.
+3. **YouTube Links**: Our robot can find YouTube videos related to the skills and jobs it thinks you might like. It's a great way to learn more about these areas.
 
-To use the MassPlanner API, you need to have Python 3.9 and aiohttp installed. You also need to set the NANONETS_API_KEY environment variable to your Nanonets API key.The MassPlanner API is a powerful tool designed to assist in resume analysis and recommendation generation. It utilizes advanced machine learning techniques to extract key features from resumes, generate potential related skills and occupations, and provide valuable recommendations to enhance the resume. 
+4. **Interview Preparation Tips**: Going for a job interview can be scary, but our robot can give you tips to help you get ready and feel more confident.
 
-## Features
+5. **Suggested Improvements**: Our robot can even suggest ways to make your resume better. This can help you have a better chance of getting the job you want.
 
-1. Resume Feature Extraction: Extracts key features from a resume, such as skills, experience, education, and more. This is done using the Nanonets API, a powerful machine learning service.
+To use our tool, you need to send information to two places (we call these "endpoints"):
 
-2. Resume Recommendations: Based on the extracted features, the engine generates potential related skills and occupations. This can help users understand what skills they might need to develop or what occupations they might be suitable for.
+1. POST /api/features: This is where you send your resume. Our robot will read it and understand all the important stuff.
 
-3. YouTube Links: The engine generates recommended YouTube links related to the potential skills and occupations. This can help users learn more about these areas.
+2. POST /api/recommendations: Once our robot understands your resume, it will send back a bunch of recommendations to help you improve and learn new things.
 
-4. Interview Preparation Tips: The engine provides interview preparation tips based on the resume's content. This can help users prepare for job interviews.
-
-5. Suggested Improvements: The engine suggests improvements for the resume. This can help users enhance their resumes and increase their chances of getting a job.
+Don't worry if this sounds complicated. We've designed our tool to be super easy to use. And remember, our robot is here to help you learn and grow!
 
 ## API Endpoints
 
