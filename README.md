@@ -1,6 +1,13 @@
 MassPlanner
 
+EthParis https://ethglobal.com/showcase/parity-b6mkg  
+EthNewYork currently doing discovery on directions this could go
+
+tl;dr im repurposing an old industry tool called [Mass Planner Gets Shutdown](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that got banned for public good. The new tool purpose is to continously search for new content for consumers but needs to be feed lol.
+
+
 Resume Feature Extraction and Resume Recommendations. 
+=======
 
 The Resume Feature Extraction functionality uses advanced machine learning techniques to extract key features such as skills, experience, education, and more from a resume. The extracted features are then used by the Resume Recommendations functionality to generate potential related skills and occupations, provide recommended YouTube links for learning, offer interview preparation tips, and suggest improvements for the resume.
 
