@@ -2,6 +2,8 @@ Welcome to MassPlanner!
 
 How it started in Paris https://ethglobal.com/showcase/parity-b6mkg
 
+Research: [Protoyping](https://xchrisbradley.notion.site/339f5f6c79eb44f4bb91a1c7623b3207?v=fcc70b300cb94bd081bdfc413673af62&pvs=4)
+
 Working on some cool stuff for EthNewYork, but let's talk about what we have right now.
 
 We're bringing back a tool called [Mass Planner](https://www.fabionodariphoto.com/en/massplanner-gets-shut-down/) that used to be super popular, but we're making it even better! Our new tool is like a super-smart robot that's always looking for new and exciting things for you to learn and explore.
